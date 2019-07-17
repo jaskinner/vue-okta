@@ -1,6 +1,6 @@
 <template>
     <div class="charts">
-        <img alt="Vue logo" src="../assets/logo.png" />
+        <img alt="Vue logo" src="../assets/images/cbs-tech-logo.svg" />
         <DashboardCharts msg="Welcome to Your Dashboard" />
     </div>
 </template>
