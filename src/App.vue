@@ -14,13 +14,13 @@
             <router-link class="nav-link" to="/">Home</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/about">About</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link class="nav-link" v-if="loggedIn" to="/dashboard">Dashboard</router-link>
+            <router-link class="nav-link" v-if="loggedIn" to="/account">Account</router-link>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <router-link class="nav-link" to="/about">About</router-link>
+          </li>
           <li class="nav-item">
             <router-link class="nav-link" v-if="loggedIn" to="/logout">Log out</router-link>
             <router-link class="nav-link" v-if="!loggedIn" to="/login">Log in</router-link>
@@ -61,7 +61,6 @@
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
 }
 </style>
