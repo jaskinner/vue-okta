@@ -34,27 +34,28 @@ export default new Router({
       path: "/account",
       name: "account",
       beforeEnter: requireAuth,
-      component: function () {
+      component: function() {
         return import(/*webpackChunkName: "account"*/ "./views/Account.vue");
       }
     },
-    { path: '/login', component: Login },
-    { path: '/logout',
-      beforeEnter (to, from, next) {
-        auth.logout()
-        next('/')
+    { path: "/login", component: Login },
+    {
+      path: "/logout",
+      beforeEnter(to, from, next) {
+        auth.logout();
+        next("/");
       }
     }
   ]
 });
 
-function requireAuth (to, from, next) {
+function requireAuth(to, from, next) {
   if (!auth.loggedIn()) {
     next({
-      path: '/login',
+      path: "/login",
       query: { redirect: to.fullPath }
-    })
+    });
   } else {
-    next()
+    next();
   }
 }

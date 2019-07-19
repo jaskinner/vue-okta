@@ -1,8 +1,10 @@
 <template>
   <div class="home">
     <Hero
-            msg="Welcome to my Vue-Okta Demo!"
-            desc="Thanks for checking it out. It's built with Vue.js v3 and Okta authentication."
+      msg="Welcome to my Vue-Okta Demo!"
+      desc="Thanks for checking it out. It's built with Vue.js v3 and Okta authentication."
+      :link="loggedIn ? '/account' : '/login'"
+      :linkDesc="loggedIn ? 'Go to Account' : 'Log In'"
     ></Hero>
   </div>
 </template>
@@ -17,10 +19,10 @@ export default {
   components: {
     Hero
   },
-  data () {
+  data() {
     return {
       loggedIn: auth.loggedIn()
-    }
+    };
   }
 };
 </script>
